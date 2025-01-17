@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olá, Django</title>
-</head>
-<body>
-    <h1>Olá, mundo Django!</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block titulo %}
+HomePage Hashflix
+{% endblock %}
+
+{% block content %}
+<h1>Esse é o h1</h1>
+{% endblock %}
