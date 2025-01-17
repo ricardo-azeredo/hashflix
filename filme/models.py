@@ -12,7 +12,7 @@ LISTA_CATEGORIAS = (
 )
 
 class Filme(models.Model):
-    titul= models.CharField(max_length=100)
+    titulo= models.CharField(max_length=100)
     tumb = models.ImageField(upload_to='tumb_filmes') 
     descriacao = models.TextField(max_length=1000)
     categoria = models.CharField(max_length=15, choices=LISTA_CATEGORIAS)
