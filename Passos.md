@@ -51,3 +51,35 @@ STATICFILES_DIRS = [
 
 criar uma pasta 'static' com as subpastas css, js, imagem
 
+# Criando as Views e Templates
+Configurar em urls do projeto, neste caso a pasta hashflix e add em urlpatterns o seguinte código:
+path('', include('filme.urls')),
+
+Neste exemmplo está chamando o app filme apontando para o arquivo url desta pasta que deverá ser criado.
+
+criar a pasta template no app filme (pasta filme). Podemos criar uma pasta template fora do app e projeto paraser um template global.
+
+Na View, criaremos o caminho que a lógica que será exibida no template.
+Deve chamar a View da seguinte forma:
+
+Entrar na urls.py de filme e adicionar o seguinte código:
+#from filme.views import homepage
+from .views import homepage
+
+urlpatterns = [
+    path('', homepage),
+]
+
+Na View, tem que criar a função def homepage(request) e tem que receber como parametro o request e retorna a função render com o template(página html):
+
+from django.shortcuts import render
+
+def homepage(request):
+    return render(request,'homepage.html')
+
+OBS: o template global é configurado no settings.py em template= [ "Dir":['templates']]
+
+# Template dinâmico
+
+usar o {% block conteudo %} e fecha com {% endblock %}. Use isso para inserir em outros templates e receber os valores dentro do bloco.
+No template que irão receber o template global tem user o {% extends base.html %}. base.html é o template global. 
