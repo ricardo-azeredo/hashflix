@@ -83,3 +83,8 @@ OBS: o template global é configurado no settings.py em template= [ "Dir":['temp
 
 usar o {% block conteudo %} e fecha com {% endblock %}. Use isso para inserir em outros templates e receber os valores dentro do bloco.
 No template que irão receber o template global tem user o {% extends base.html %}. base.html é o template global. 
+
+Para incluir um elemento html podemos utilizar {% include 'navbar.html' %}. Nesse exemplo inclui o arquivo/elemento navbar no arquivo global. Não fecha igual ao bloco.
+
+Para colocar uma imagem do seu arquivo static deve incluir o {% load static %} e a tag img logo abaixo. incluir isso no navbar. No src incluir 
+src="{% static 'my_app/example.jpg' %}"
