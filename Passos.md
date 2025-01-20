@@ -34,3 +34,20 @@ Na pasta de Projeto, entrar no arquivo settings.py em INSTALLED_APPS = [], adici
 ex:
 app 'filme' adiciona 'filme' dentro de INSTALLED_APPS = ['filmes',]
 Ir para arquivo urls.py do Projeto e adicionar
+
+# Aparecer o app dentro do admin
+Em admin.py importar o arquivo do models aqui. ex: from ./models import Filme
+add uma linha admin.site.register(Filme)
+
+Para ajustar o titulo do filme, criar a def __str__(self) retorna self.titulo dentro do Models Filme. Executar o makemigrations e migrate.
+
+# Criar pasta para arquivos estáticos(image, css, js)
+
+Adicionar em settings.py do projeto e adicionar esta constante abaixo no local de statics
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",    
+]
+
+criar uma pasta 'static' com as subpastas css, js, imagem
+
